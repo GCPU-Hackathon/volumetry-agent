@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from controllers.volumetry_controller import analyze_study_handler, get_study_metrics_handler, StudyRequest, VolumetryResponse
+from controllers.volumetry_controller import analyze_study_handler, StudyRequest, VolumetryResponse
 import uvicorn
 import os
 
