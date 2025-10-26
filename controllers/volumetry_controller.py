@@ -40,21 +40,3 @@ async def analyze_study_handler(request: StudyRequest):
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
-
-async def get_study_metrics_handler(study_code: str):
-    """
-    Get the metrics for a specific study if they exist.
-    
-    Args:
-        study_code: The study identifier
-        
-    Returns:
-        JSON metrics data
-    """
-    try:
-        metrics = volumetry_service.get_study_metrics(study_code)
-        return metrics
-    except FileNotFoundError:
-        raise HTTPException(status_code=404, detail=f"Metrics for study {study_code} not found")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")

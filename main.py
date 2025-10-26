@@ -16,13 +16,6 @@ async def analyze_study(request: StudyRequest):
     """
     return await analyze_study_handler(request)
 
-@app.get("/studies/{study_code}/metrics")
-async def get_study_metrics(study_code: str):
-    """
-    Get the metrics for a specific study if they exist.
-    """
-    return await get_study_metrics_handler(study_code)
-
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
