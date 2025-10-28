@@ -9,7 +9,7 @@ services:
         WWWGROUP: 1000
     container_name: volumetry-agent
     ports:
-      - "8899:8000"
+      - "8000"
     volumes:
       - ./:/app
       - /tmp:/tmp
